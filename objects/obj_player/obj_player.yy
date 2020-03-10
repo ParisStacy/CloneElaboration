@@ -1,0 +1,91 @@
+{
+    "id": "37a7ec24-9195-4a7a-890a-403211ad9900",
+    "modelName": "GMObject",
+    "mvc": "1.0",
+    "name": "obj_player",
+    "eventList": [
+        {
+            "id": "4aceb78a-6c4a-486d-ba94-193162f06e29",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "37a7ec24-9195-4a7a-890a-403211ad9900"
+        },
+        {
+            "id": "1452a7c6-e48e-450d-9b62-cdbf2a223023",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "37a7ec24-9195-4a7a-890a-403211ad9900"
+        }
+    ],
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
+    "parentObjectId": "bfd947d3-af32-4564-ae75-0d3f7664686c",
+    "persistent": false,
+    "physicsAngularDamping": 0.1,
+    "physicsDensity": 0.5,
+    "physicsFriction": 0.2,
+    "physicsGroup": 0,
+    "physicsKinematic": false,
+    "physicsLinearDamping": 0.1,
+    "physicsObject": false,
+    "physicsRestitution": 0.1,
+    "physicsSensor": false,
+    "physicsShape": 1,
+    "physicsShapePoints": null,
+    "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "1032e9e9-c71d-4ff7-9d5f-3cf82b50e4ae",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-4",
+            "varName": "verticalVelocity",
+            "varType": 0
+        },
+        {
+            "id": "12e28975-5226-4290-900c-eb9eba9a98c9",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "10",
+            "varName": "moveSpeed",
+            "varType": 0
+        },
+        {
+            "id": "06fef3e2-9748-4982-bd8b-5c16cb3d3bde",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "playerNum",
+            "varType": 1
+        }
+    ],
+    "solid": false,
+    "spriteId": "cd57744c-dd78-4b55-8dd5-0e305508228a",
+    "visible": true
+}
