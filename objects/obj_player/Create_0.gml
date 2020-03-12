@@ -14,3 +14,4 @@ timer = 0;
 playerScore = 0;
 deathEvents = false;
 audio_play_sound(jump,1,false);
+depth = -10;

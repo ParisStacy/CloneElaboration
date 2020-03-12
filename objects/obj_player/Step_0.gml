@@ -109,7 +109,7 @@ if (alive == false) {
 }
 
 //WALL COLLISION
-if (x < 10 || x > 300 - 10) {
+if (x < 10 || x > room_width - 10) {
 	xDir *= -2;
 }
 
