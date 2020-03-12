@@ -98,7 +98,7 @@ if (alive == false) {
 		timer = 0;
 		deathEvents = false;
 		y = 300;
-		x = random_range(32, 200 - 32);
+		x = random_range(32, 500 - 32);
 		yDir = -8;
 		xDir = choose(-10, 10);
 		alive = true;
