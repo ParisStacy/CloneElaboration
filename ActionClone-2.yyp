@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0b700dd5-1c39-4878-8616-e307b6b1bc51",
+            "Value": {
+                "id": "7f14a22a-4849-4964-8d99-b900e009cfd9",
+                "resourcePath": "sprites\/spr_ball\/spr_ball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0c587b22-2a57-4348-913d-ab8dd59f4551",
             "Value": {
                 "id": "e8aa913d-e906-41c8-bbb2-20c17be75d76",
@@ -47,11 +55,35 @@
             }
         },
         {
+            "Key": "10b6c0f3-805f-44d6-8deb-4a6121a21a24",
+            "Value": {
+                "id": "2e1d6df7-4b16-4cf4-947b-677d6ad0d5f6",
+                "resourcePath": "sprites\/spr_background2\/spr_background2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1313cc41-e4be-42fc-89d9-b6529135a442",
             "Value": {
                 "id": "7f76ace6-84f4-4a0c-b613-337a53de608d",
                 "resourcePath": "objects\/obj_camfollow\/obj_camfollow.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "14e1cd03-05a3-436c-bbec-0aa6b6dbe85a",
+            "Value": {
+                "id": "9ec52b2d-2678-40bd-b314-af15216240a6",
+                "resourcePath": "objects\/obj_ballaura\/obj_ballaura.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1a7c766f-f34d-4781-bacd-28e43f0c780e",
+            "Value": {
+                "id": "81ad9863-32c3-4e03-a8b0-00d27cfe5dc3",
+                "resourcePath": "fonts\/NewFont\/NewFont.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -335,6 +367,14 @@
             }
         },
         {
+            "Key": "c80d6d49-ecc2-4447-8188-7dcb13988a91",
+            "Value": {
+                "id": "ed88e6c0-8343-4617-9db1-2ef2eea570fa",
+                "resourcePath": "sprites\/spr_sun\/spr_sun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "cb16dad2-9ee6-42a2-b2bd-473eeca2203f",
             "Value": {
                 "id": "7cd67a40-7e92-42e0-9df1-c39993ad0e7b",
@@ -372,6 +412,14 @@
                 "id": "0cd6d41b-c564-4b5f-ba88-435770baf313",
                 "resourcePath": "sprites\/spr_platform2\/spr_platform2.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "dc516603-468d-4d33-840d-e4f87fa54c6a",
+            "Value": {
+                "id": "8a83b008-f14a-4459-9469-737a45565d04",
+                "resourcePath": "objects\/obj_ball\/obj_ball.yy",
+                "resourceType": "GMObject"
             }
         },
         {

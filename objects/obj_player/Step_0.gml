@@ -1,3 +1,5 @@
+//TODO: Add ground pound
+
 //APPLY MOTION + GRAVITY
 x -= xDir;
 
@@ -21,6 +23,10 @@ if (playerNum == 0) {
 	if (keyboard_check(vk_right)) {
 		xDir -= moveSpeed / 60;
 	}
+	if (keyboard_check_pressed(vk_down)) {
+		yDir = 8;
+		fastFall = true;
+	}
 }
 if (playerNum == 1) {
 	if (keyboard_check(ord("A"))) {
@@ -29,6 +35,11 @@ if (playerNum == 1) {
 	if (keyboard_check(ord("D"))) {
 		xDir -= moveSpeed / 60;
 	}
+	if (keyboard_check_pressed(ord("S"))) {
+		yDir = 8;
+		fastFall = true;
+	}
+	
 }
 xDir *= .9;
 
@@ -49,7 +60,12 @@ if (yDir > 0 && alive) {
 			if (!place_meeting(x,y,impactCollision)) {
 				//PLATFORM COLLISION
 				if (impactCollision.object_index == obj_platform) {
-					yDir = verticalVelocity;
+					if (!fastFall) {
+						yDir = verticalVelocity;
+					} else {
+						fastFall = false;
+						yDir = verticalVelocity * 1.5;
+					}
 					impactCollision.destroyed = true;
 					impactCollision.image_speed = 1;
 					impactCollision.mask_index = -1;
@@ -59,7 +75,12 @@ if (yDir > 0 && alive) {
 				//PLAYER COLLISION
 				if (impactCollision.object_index == obj_player) {
 					//ADD SCORE AND JUMP
-					yDir = verticalVelocity * 1.3;
+					if (!fastFall) {
+						yDir = verticalVelocity;
+					} else {
+						fastFall = false;
+						yDir = verticalVelocity * 2;
+					}
 					playerScore++;
 					//JUICE
 					audio_play_sound(hit,1,false);
@@ -98,7 +119,7 @@ if (alive == false) {
 		timer = 0;
 		deathEvents = false;
 		y = 300;
-		x = random_range(32, 200 - 32);
+		x = random_range(32, 500 - 32);
 		yDir = -8;
 		xDir = choose(-10, 10);
 		alive = true;
@@ -109,7 +130,7 @@ if (alive == false) {
 }
 
 //WALL COLLISION
-if (x < 10 || x > 300 - 10) {
+if (x < 10 || x > room_width - 10) {
 	xDir *= -2;
 }
 

@@ -12,6 +12,6 @@ yAverage += 20;
 if (yAverage <= 0) yAverage = 0;
 if (yAverage >= room_height - 200) yAverage = room_height - 200;
 
-y = lerp(y,yAverage,.3);
+y = lerp(y,0,.3);
 
 camera_set_view_pos(view_camera[0], 0, y);

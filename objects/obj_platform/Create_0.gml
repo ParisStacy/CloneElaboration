@@ -5,5 +5,9 @@ if (collision_rectangle(x + 32, y + 16, x - 32, y - 16, obj_platform, false, tru
 obj_manager.spawnTimer = 0;
 instance_destroy();
 }
+if (collision_rectangle(x + 32, y + 16, x - 32, y - 16, obj_ballaura, false, true)) {
+obj_manager.spawnTimer = 0;
+instance_destroy();
+}
 
 destroyed = false;
