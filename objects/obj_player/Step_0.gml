@@ -1,4 +1,8 @@
-//TODO: Add ground pound
+//FREEZE THIS FRAME?
+if (freezeNextFrame) {
+	freezeImpact(300,x,y);
+	freezeNextFrame = false;
+}
 
 //APPLY MOTION + GRAVITY
 x -= xDir;
@@ -23,9 +27,11 @@ if (playerNum == 0) {
 	if (keyboard_check(vk_right)) {
 		xDir -= moveSpeed / 60;
 	}
-	if (keyboard_check_pressed(vk_down)) {
+	if (keyboard_check_pressed(vk_down) && can_fastfall) {
 		yDir = 8;
 		fastFall = true;
+		audio_play_sound(death,1,0);
+		can_fastfall = false;
 	}
 }
 if (playerNum == 1) {
@@ -35,9 +41,11 @@ if (playerNum == 1) {
 	if (keyboard_check(ord("D"))) {
 		xDir -= moveSpeed / 60;
 	}
-	if (keyboard_check_pressed(ord("S"))) {
+	if (keyboard_check_pressed(ord("S")) && can_fastfall) {
 		yDir = 8;
 		fastFall = true;
+		audio_play_sound(death,1,0);
+		can_fastfall = false;
 	}
 	
 }
@@ -64,7 +72,7 @@ if (yDir > 0 && alive) {
 						yDir = verticalVelocity;
 					} else {
 						fastFall = false;
-						yDir = verticalVelocity * 1.5;
+						yDir = verticalVelocity * 1.3;
 					}
 					impactCollision.destroyed = true;
 					impactCollision.image_speed = 1;
@@ -74,18 +82,23 @@ if (yDir > 0 && alive) {
 				}
 				//PLAYER COLLISION
 				if (impactCollision.object_index == obj_player) {
-					//ADD SCORE AND JUMP
+					//JUMP
 					if (!fastFall) {
-						yDir = verticalVelocity;
+						yDir = verticalVelocity * 1.3;
 					} else {
 						fastFall = false;
-						yDir = verticalVelocity * 2;
+						yDir = verticalVelocity * 1.5;
 					}
-					playerScore++;
 					//JUICE
 					audio_play_sound(hit,1,false);
-					freezeImpact(300,x,y);
 					audio_play_sound(hit2,1,false);
+					freezeNextFrame = true;
+					
+					var deathExplosion = instance_create_layer(x,y + 10,"cosmetic_layer",obj_impact);
+					deathExplosion.depth = 10;
+					deathExplosion.image_xscale = 1.5;
+					deathExplosion.image_yscale = 1.5;
+					
 					//ENEMY PLAYER BEHAVIOR
 					impactCollision.yDir = 20;
 					impactCollision.alive = false;
@@ -108,7 +121,6 @@ if (y > room_height - 10 && y > room_height && !deathEvents) {
 		deathExplosion.depth = 10;
 		deathExplosion.image_xscale = 2;
 		deathExplosion.image_yscale = 2;
-		playerScore--;
 		deathEvents = true;
 }
 //RESPAWN
@@ -136,3 +148,22 @@ if (x < 10 || x > room_width - 10) {
 
 //SCORING
 if (playerScore < 0) playerScore = 0;
+
+//OFFSCREEN INDICATOR
+if (y < 0) {
+indicator.x = x;
+indicator.y = 10;
+} else {
+indicator.x = 1000;
+indicator.y = 1000;
+}
+
+image_yscale = (alive) ? 1 : -1.5;
+
+if (!can_fastfall) {
+fastfall_cooldown--;
+	if (fastfall_cooldown < 0) {
+		can_fastfall = true;
+		fastfall_cooldown = 30;
+	}
+}

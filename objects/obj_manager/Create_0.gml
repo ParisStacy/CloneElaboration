@@ -4,3 +4,5 @@ for (i = 0; i <= 100; i++){
 
 spawnTimer = random_range(0,2) * 30;
 depth = 99;
+
+volume = 1;
